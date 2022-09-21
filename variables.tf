@@ -10,7 +10,7 @@ variable "toplevel_inst_type" {
 }
 
 variable "topsec" {
-  default = "terrformgroup"
+  default = "terraformgroup"
 }
 
 variable "topkey" {
