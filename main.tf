@@ -16,7 +16,7 @@ module "custom_instance" {
   source = "./awsinstance"
   ami_id = var.toplevel_amiid
   topsec = var.topsec
-  topkey = var.topkey 
+  topkey = var.topkey
 }
 
 module "db_instance" {
@@ -24,7 +24,8 @@ module "db_instance" {
   ami_id         = var.toplevel_amiid
   eph_block_size = var.toplevel_block_size
   inst_type      = var.toplevel_inst_type
-
+  topsec         = var.topsec
+  topkey         = var.topkey
 }
 
 module "aws_security_group" {
