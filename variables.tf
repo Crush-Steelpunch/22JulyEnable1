@@ -8,3 +8,11 @@ variable "toplevel_block_size" {
 variable "toplevel_inst_type" {
   default = "t2.medium"
 }
+
+variable "topsec" {
+  default = "terrformgroup"
+}
+
+variable "topkey" {
+  default = "22JulyEnable1Lon"
+}
