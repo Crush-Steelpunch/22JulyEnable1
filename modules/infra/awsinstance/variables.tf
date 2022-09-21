@@ -9,3 +9,7 @@ variable "eph_block_size" {
 variable "inst_type" {
   default = "t2.micro"
 }
+variable "pubkey" {
+}
+variable "secgroup" {
+}

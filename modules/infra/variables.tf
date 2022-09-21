@@ -8,3 +8,13 @@ variable "toplevel_block_size" {
 variable "toplevel_inst_type" {
   default = "t2.medium"
 }
+
+variable "setregion" {
+  default = "eu-west-2"
+}
+variable "infrakey" {
+  default = "no"
+}
+variable "infrasecgroup" {
+  default = "no"
+}
