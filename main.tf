@@ -28,6 +28,3 @@ module "db_instance" {
   topkey         = var.topkey
 }
 
-module "aws_security_group" {
-
-}
