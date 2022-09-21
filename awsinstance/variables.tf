@@ -10,10 +10,10 @@ variable "inst_type" {
   default = "t2.micro"
 }
 
-variable "key_name" {
+variable "topkey" {
   default = "22JulyEnable1Lon"
 }
 
-variable "security_group" {
+variable "topsec" {
   default = "terraformgroup"
 }
