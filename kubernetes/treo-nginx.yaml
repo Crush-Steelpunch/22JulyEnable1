@@ -5,3 +5,44 @@
 # service Loadbalancer 
 # Image
 # registry.gitlab.com/baggypants/trio-task/nginx
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: registry.gitlab.com/baggypants/trio-task/nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
