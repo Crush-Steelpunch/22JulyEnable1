@@ -1,0 +1,7 @@
+# Nginx is doing a proxy pass to 
+# flask-app:5000
+# Nginx will listen on port 80
+# Deployment config
+# service Loadbalancer 
+# Image
+# registry.gitlab.com/baggypants/trio-task/nginx

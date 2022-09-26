@@ -1,0 +1,9 @@
+# Mysql
+# Service port 3306
+# Service type ClusterIP
+# Service Name `mysql`
+# Deployment config needs to set:
+# MYSQL_ROOT_PASSWORD=[PASSWORD]
+# MYSQL_DATABASE=flask-db
+#
+# registry.gitlab.com/baggypants/trio-task/db

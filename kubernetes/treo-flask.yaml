@@ -1,0 +1,7 @@
+# flask app listening on port 5000
+# Service ClusterIP port 5000
+# service name must be 'flask-app'
+# 
+# Image
+#registry.gitlab.com/baggypants/trio-task/flask-app
+
