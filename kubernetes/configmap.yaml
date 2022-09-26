@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  nginx.conf: "server {\r\n    listen 80;\r\n    location / {\r\n        proxy_pass
+    http://flask-app:5000;\r\n    }\r\n}"
+kind: ConfigMap
+metadata:
+  name: my-config1
