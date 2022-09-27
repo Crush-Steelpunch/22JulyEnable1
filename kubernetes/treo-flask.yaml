@@ -33,7 +33,11 @@ spec:
           protocol: TCP
         env:
         - name: MYSQL_PASSWORD
-          value: password123
+          valueFrom:
+            secretKeyRef:
+              name: app-password
+              key: storedpassword 
+              optional: false
 ---
 apiVersion: v1
 kind: Service

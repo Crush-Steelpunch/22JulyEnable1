@@ -37,6 +37,10 @@ spec:
           name: mysqlconfig
       containers:
       - image: mysql:5.7
+        resources: 
+          requests:
+            memory: 128Mi
+            cpu: 500m
         name: mysql
         ports:
         - containerPort: 3306
@@ -46,7 +50,11 @@ spec:
             mountPath: /docker-entrypoint-initdb.d/
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: password123
+#          value: password123
+          valueFrom:
+            secretKeyRef:
+              name: app-password
+              key: storedpassword
         - name: MYSQL_DATABASE
           value: flask-db
 ---
