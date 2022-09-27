@@ -1,0 +1,22 @@
+#Trio with configMaps
+
+# Nginx
+
+# Configmap for nginx.conf
+# Associate ConfigMap with Volume
+# Mount Volume to path /etc/nginx/conf.d
+# 
+
+
+# MySQL Deployment
+
+# change image to mysql:5.7
+# Configmap containing CreateTable.sql
+# Edit it with your own names
+
+# Deployment
+# Include environment MYSQL_ROOT_PASSWORD
+# this must match the env for the flask-app
+# & environment MYSQL_DATABASE=flask-db
+# Associate ConfigMap with Volume
+# Mount Volume to path /docker-entrypoint-initdb.d/
