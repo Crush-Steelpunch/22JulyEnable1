@@ -11,7 +11,9 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
+    prog: trio2
   name: nginx
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -26,13 +28,21 @@ spec:
     metadata:
       labels:
         app: nginx
+        prog: trio2
     spec:
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: my-config
       containers:
-      - image: registry.gitlab.com/baggypants/trio-task/nginx
+      - image: nginx:alpine
         name: nginx
         ports:
         - containerPort: 80
           protocol: TCP
+        volumeMounts:
+         - name: nginx-config-volume
+           mountPath: /etc/nginx/conf.d
 ---
 apiVersion: v1
 kind: Service
@@ -41,6 +51,7 @@ metadata:
 spec:
   selector:
     app: nginx
+    prog: trio2
   ports: 
   - protocol: TCP
     port: 80

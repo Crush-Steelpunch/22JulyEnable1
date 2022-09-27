@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  CreateTable.sql: "CREATE TABLE IF NOT EXISTS users\r\n             (\r\n                          id
+    \        INTEGER NOT NULL AUTO_INCREMENT,\r\n                          first_name
+    VARCHAR(30) NOT NULL,\r\n                          last_name  VARCHAR(30) NOT
+    NULL,\r\n                          email      VARCHAR(150) NOT NULL,\r\n                          PRIMARY
+    KEY (id),\r\n                          UNIQUE (email)\r\n) ENGINE=InnoDB DEFAULT
+    CHARSET=utf8mb4;\r\n\r\n\r\nLOCK TABLES `users` WRITE;\r\n/*!40000 ALTER TABLE
+    `users` DISABLE KEYS */;\r\nINSERT INTO `users` VALUES (1,'John','Craven','test@test7.com'),(2,'Jenny','Loom','test@test.com'),(3,'Big','McBoatface','test4@test.com');\r\n/*!40000
+    ALTER TABLE `users` ENABLE KEYS */;\r\nUNLOCK TABLES;\r\n"
+kind: ConfigMap
+metadata:
+  name: mysqlconfig
